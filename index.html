@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Folio</title>
+  <meta name="description" content="Dynamic developer portfolio — live GitHub profile, repos, and merged PRs on GitHub Pages." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#home" class="nav-logo">folio</a>
+      <ul class="nav-links">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pull-requests">PRs</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li data-nav="holopin"><a href="#holopin-badges">Badges</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-avatar-wrap">
+        <img id="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="" class="hero-avatar" />
+      </div>
+      <h1 class="hero-title"><span id="hero-name">Your name</span></h1>
+      <p class="hero-tagline">Your short tagline</p>
+      <p class="hero-bio" id="hero-bio">Loading...</p>
+      <p class="hero-meta" id="hero-meta"></p>
+      <div class="hero-cta">
+        <a href="#pull-requests" class="btn btn-primary">View contributions</a>
+        <a href="#projects" class="btn btn-ghost">View projects</a>
+        <a href="https://github.com/" data-github-profile target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </section>
+
+    <section id="summary" class="section summary-section">
+      <h2 class="section-title">Summary</h2>
+      <div class="summary-infographic">
+        <a href="#pull-requests" class="summary-card">
+          <span class="summary-card-value" id="summary-pr-count">—</span>
+          <span class="summary-card-label">Merged PRs</span>
+        </a>
+        <a href="#pull-requests" class="summary-card">
+          <span class="summary-card-value" id="summary-pr-repos">—</span>
+          <span class="summary-card-label">Repos contributed to</span>
+        </a>
+        <a href="#projects" class="summary-card">
+          <span class="summary-card-value" id="summary-project-count">—</span>
+          <span class="summary-card-label">Public repositories</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="holopin-badges" class="section section--dark" data-section="holopin">
+      <h2 class="section-title">Holopin Badges</h2>
+      <p class="section-desc">Digital badges for contributions and achievements.</p>
+      <a href="https://holopin.io" target="_blank" rel="noopener" class="holopin-wrap">
+        <img alt="Holopin badge board" class="holopin-board" width="800" height="200" />
+      </a>
+    </section>
+
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+        <p><strong>Your role</strong> · Short headline.</p>
+        <p>Replace this paragraph with your background, interests, and what you build. Link to your full profile if you like.</p>
+        <p><a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noopener">View full profile on LinkedIn</a></p>
+      </div>
+    </section>
+
+    <section id="pull-requests" class="section">
+      <h2 class="section-title">Merged pull requests</h2>
+      <p class="section-desc">Merged PRs only, grouped by repo.</p>
+      <div id="pr-grid" class="pr-grouped">
+        <div class="projects-loading">Loading merged PRs…</div>
+      </div>
+      <p class="projects-note">Showing <span id="pr-count">—</span> merged PRs across <span id="pr-repo-count">—</span> repos. <a href="https://github.com/search?q=is%3Apr+is%3Amerged&amp;type=pullrequests" data-pr-search-link target="_blank" rel="noopener">View all on GitHub</a></p>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 class="section-title">Public repositories</h2>
+      <p class="section-desc">Your public, non-fork repositories, sorted by stars then forks (from the GitHub API).</p>
+      <div id="projects-grid" class="projects-grid">
+        <div class="projects-loading">Loading repos…</div>
+      </div>
+      <p class="projects-note">From GitHub API (live). Showing <span id="repo-count">—</span> public repositories.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-links">
+        <a href="https://github.com/" data-github-profile target="_blank" rel="noopener" class="contact-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+        <a href="mailto:you@example.com" class="contact-link">Email</a>
+        <a href="https://twitter.com/YOUR_HANDLE" target="_blank" rel="noopener" class="contact-link">Twitter / X</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="footer-display-name">Your Name</span> · <span id="footer-brand" style="font-family: var(--font-mono); font-weight: 700;">folio</span></p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
